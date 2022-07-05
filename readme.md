@@ -11,6 +11,6 @@ https://www.frontendmentor.io/challenges/expenses-chart-component-e7yJBUdjwt`
 
 ![My solution](/design/my-solution.png "My solution")
 
-View my solution at:  
+View my solution at: https://62c43d4bbe4bdb11ae3c87e5--lucky-daifuku-97609d.netlify.app/
 
 Feedback is welcome! Especially about JavaScript 😁
