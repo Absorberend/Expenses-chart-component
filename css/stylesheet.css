@@ -1,0 +1,413 @@
+/* font-family: 'DM Sans', sans-serif; */
+
+html {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+:root {
+    --bar-color-primary: hsl(10, 79%, 65%);
+    --bar-color-transparent: hsl(10, 79%, 65%, 0.7);
+    --background-color: hsl(27, 66%, 92%);
+    --spending-background-color: hsl(33, 100%, 98%); 
+    --font-color-primary: hsl(25, 47%, 15%);
+    --font-color-secondary: hsl(28, 10%, 53%);
+}
+
+/* general styling */
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    padding: 0;
+    gap: 1em;
+    background-color: var(--background-color);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+}
+
+
+/* header */
+.header__container {
+    width: 330px;
+    height: 100px;
+    margin-block-start: 2em;
+    background: var(--bar-color-primary);
+    padding: 0 1.2em;
+    gap: 0.5em;
+    border-radius: 10px;
+    display: grid;
+    grid-template-areas:
+    "blnc logo"
+    "bals logo";
+    color: var(--spending-background-color);
+}
+
+.balance {
+    grid-area: blnc;
+    align-self: flex-end;
+}
+
+.balance__saldo {
+    grid-area: bals;
+    font-weight: 700;
+    font-size: 1.8rem;
+}
+
+.header__logo {
+    grid-area: logo;
+    justify-self: end;
+    align-self: center;
+}
+
+/* main */
+
+main {
+    background-color: var(--spending-background-color);
+    width: 330px;
+    display: grid;
+    grid-template-areas:
+    "head head"
+    "spend spend"
+    "div div"
+    "month month";
+    grid-auto-columns: 1fr 3fr 3px 1fr;
+    padding: 1.2em;
+    border-radius: 10px;
+}
+
+.main__header {
+    grid-area: head;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--font-color-primary);
+}
+
+.spending__container {
+    grid-area: spend;
+    align-self: center;
+}
+
+
+/* divider styling */
+.divider {
+    grid-area: div;
+    width: 100%;
+    background-color: var(--background-color);
+    height: 2px;
+    margin: 1.5em 0;
+}
+
+/* spending bar chart general */
+.spending__container {
+    display: grid;
+    min-height: 200px;
+    grid-template-rows: 1fr 4fr 0.5fr;
+    grid-template-areas: 
+    "hid"
+    "bar"
+    "day";
+    gap: 0.5em;
+}
+
+.hidden__bar__placeholder {
+    grid-area: hid;
+}
+
+
+/* spending bar chart bars styling */
+.bar__wrapper {
+    grid-area: bar;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-areas: "mon tue wed thu fri sat sun";
+    gap: 0.55em;
+    align-items: flex-end;
+}
+
+.bar__template {
+    border-radius: 5px;
+    background-color: var(--bar-color-primary);
+    cursor: pointer;
+}
+
+#current__day {
+    background-color: hsl(186, 34%, 60%);
+}
+
+.mon__bar {
+    grid-area: mon;
+    position: relative;
+}
+
+.tue__bar {
+    grid-area: tue;
+    position: relative;
+}
+
+.wed__bar {
+    grid-area: wed;
+    position: relative;
+}
+
+.thu__bar {
+    grid-area: thu;
+    position: relative;
+}
+
+.fri__bar {
+    grid-area: fri;
+    position: relative;
+}
+
+.sat__bar {
+    grid-area: sat;
+    position: relative;
+}
+
+.sun__bar {
+    grid-area: sun;
+    position: relative;
+}
+
+
+/* spending bar chart hidden bars styling */
+.hidden__bar__template {
+    background-color: black;
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    width: 45px;
+    height: 30px;
+    border-radius: 5px;
+    top: -35px;
+    left: -6px;
+}
+
+.mon__hidden {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+}
+
+.tue__hidden {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+}
+
+.wed__hidden {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+}
+
+.thu__hidden {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+}
+
+.fri__hidden {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+}
+
+.sat__hidden {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+}
+
+.sun__hidden {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+}
+
+/* spending bar chart hover styling */
+#current__day:hover {
+    background-color: hsl(186, 34%, 60%, 0.7);
+}
+
+.bar__template:hover {
+    background-color: var(--bar-color-transparent);
+}
+
+.mon__bar:hover .mon__hidden {
+    visibility: visible;
+}
+
+.tue__bar:hover .tue__hidden {
+    visibility: visible;
+
+}
+
+.wed__bar:hover .wed__hidden {
+    visibility: visible;
+}
+
+.thu__bar:hover .thu__hidden {
+    visibility: visible;
+}
+
+.fri__bar:hover .fri__hidden {
+    visibility: visible;
+}
+
+.sat__bar:hover .sat__hidden {
+    visibility: visible;
+}
+
+.sun__bar:hover .sun__hidden {
+    visibility: visible;
+}
+
+/* spending bar chart day styling */
+.day__wrapper {
+    display: grid;
+    grid-area: day;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-areas: "mond tued wedd thud frid satd sund";
+    font-size: 12px;
+    color: var(--font-color-secondary);
+    gap: 0.55em;
+    justify-items: center;
+    align-items: center;
+}
+
+.day__mon {
+    grid-area: mond;
+}
+
+.day__tue {
+    grid-area: tued;
+}
+
+.day__wed {
+    grid-area: wedd;
+}
+
+.day__thu {
+    grid-area: thud;
+}
+
+.day__fri {
+    grid-area: frid;
+}
+
+.day__sat {
+    grid-area: satd;
+}
+
+.day__sun {
+    grid-area: sund;
+}
+
+/* this and last month styling */
+.month__wrapper {
+    grid-area: month;
+    display: flex;
+    min-height: 75px;
+    width: 100%;
+    color: var(--font-color-secondary);
+}
+
+.this__month {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 0.55em;
+    width: 100%;
+}
+
+.spending__this__month {
+    font-size: 36px;
+    color: var(--font-color-primary);
+    font-weight: 700;
+    margin-block-end: -4px;
+}
+
+.last__month {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.spending__increase {
+    color: var(--font-color-primary);
+    font-weight: 700;
+}
+
+/* footer */
+footer {
+    height: 100%;
+    font-size: 12px;
+    color: var(--font-color-secondary);
+    display: flex;
+}
+
+.footer__link {
+   color: var(--bar-color-transparent);
+   text-decoration-color: var(--bar-color-transparent);
+}
+@media only screen and (min-width: 600px) {
+    .header__container {
+        width: 450px;
+        padding: 0 2em;
+        border-radius: 15px;
+        margin-block-start: 0;
+    }
+    main {
+        width: 450px;
+        padding: 1em 2em 2.5em 2em;
+        border-radius: 15px;
+    }
+    .spending__container {
+        min-height: 175px;
+    }
+    .spending__this__month {
+        font-size: 40px;
+    }
+    .month__wrapper {
+        min-height: 50px;
+    }
+    .hidden__bar__template {
+        font-size: 14px;
+        font-weight: 700;
+        width: 60px;
+        left: -8px;
+    }
+    .bar__wrapper {
+        gap: 0.8em;
+    }
+    .day__wrapper {
+        gap: 0.8em;
+    }
+  }

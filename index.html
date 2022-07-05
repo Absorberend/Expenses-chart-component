@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/stylesheet.css">
+  <title>Frontend Mentor | Expenses chart component</title>
+
+</head>
+<body>
+
+  <header>
+
+    <div class="header__container">
+      <div class="balance"><span>My balance</span></div>
+      <div class="balance__saldo"><span>$921.48</span></div>
+      <div class="header__logo"><img src="images/logo.svg" alt="logo"><img></div>
+    </div>
+
+  </header>
+  <main>
+
+    <div class="main__header">
+      <h1>Spending - Last 7 days</h1>
+    </div> 
+
+    <div class="spending__container">
+      <div class="hidden__bar__placeholder"></div>
+
+      <div class="bar__wrapper">
+        <div class="mon__bar bar__template mon"><span class="mon__hidden hidden__bar__template"></span></div>
+        <div class="tue__bar bar__template tue"><span class="tue__hidden hidden__bar__template"></span></div>
+        <div class="wed__bar bar__template wed"><span class="wed__hidden hidden__bar__template"></span></div>
+        <div class="thu__bar bar__template thu"><span class="thu__hidden hidden__bar__template"></span></div>
+        <div class="fri__bar bar__template fri"><span class="fri__hidden hidden__bar__template"></span></div>
+        <div class="sat__bar bar__template sat"><span class="sat__hidden hidden__bar__template"></span></div>
+        <div class="sun__bar bar__template sun"><span class="sun__hidden hidden__bar__template"></span></div>
+      </div>
+    
+      <div class="day__wrapper">
+        <span class="day__mon">mon</span>
+        <span class="day__tue">tue</span>
+        <span class="day__wed">wed</span>
+        <span class="day__thu">thu</span>
+        <span class="day__fri">fri</span>
+        <span class="day__sat">sat</span>
+        <span class="day__sun">sun</span>
+      </div>
+    </div>
+    
+    <div class="divider"></div>
+
+    <div class="month__wrapper">
+      <div class="this__month">
+        <span>Total this month</span>
+        <span class="spending__this__month">$478.33</span>
+      </div>
+
+      <div class="last__month">
+        <span class="spending__increase">+2.4%</span>
+        <span>from last month</span>
+      </div>
+
+    </div>
+  </main>
+  <footer>
+    <div>
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" class="footer__link" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#" class="footer__link" target="_blank">Absorberend</a>.
+    </div>
+  </footer>
+  <script src="js/script.js"></script>
+</body>
+</html>
