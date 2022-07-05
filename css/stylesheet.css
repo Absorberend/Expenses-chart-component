@@ -379,18 +379,19 @@ footer {
 }
 @media only screen and (min-width: 600px) {
     .header__container {
-        width: 450px;
+        width: 500px;
         padding: 0 2em;
         border-radius: 15px;
         margin-block-start: 0;
+        height: 120px;
     }
     main {
-        width: 450px;
+        width: 500px;
         padding: 1em 2em 2.5em 2em;
         border-radius: 15px;
     }
     .spending__container {
-        min-height: 175px;
+        min-height: 225px;
     }
     .spending__this__month {
         font-size: 40px;
