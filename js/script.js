@@ -31,3 +31,4 @@ fetch("data.json")
     jsonData.forEach(week => document.querySelector(`.${week.day}__hidden`).textContent = `$${week.amount}`);
 })
 
+
