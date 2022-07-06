@@ -1,9 +1,9 @@
 'use strict'
 
 //Determine the day of the week.
-const weekday = ["mon", "tue", "wed", "fri", "sat", "sun"];
+const weekday = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
 const d = new Date();
-let day = weekday[d.getDay()];
+let day = weekday[d.getDay() - 1];
 
 fetch("data.json")
 .then(data => data.json())
